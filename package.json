@@ -32,5 +32,12 @@
 		"typescript": "^5.0.0",
 		"vite": "^5.0.3"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@dhanush-npm/google-sheets-to-json": "^1.0.4",
+		"axios": "^1.6.8",
+		"google-auth-library": "^9.8.0",
+		"google-spreadsheet": "^4.1.1",
+		"google-spreadsheet-to-json": "^1.0.0"
+	}
 }

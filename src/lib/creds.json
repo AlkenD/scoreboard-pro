@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "mineral-aegis-312803",
+  "private_key_id": "adbb66682f7467a90d46706471185aad5dc94f7f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCkhtJSD+7UcGl7\n4u0p0LDUMrkd1dcmRlLP575TPhXJ8AVYhleh8xGFpHE2CNQmCnOTDpKL26hAu3t6\n/0xHWeyoQJqDF9r3suVwfbwqpCnK2Hv1V2yB+IHIDCNpETb4s6cmshPzKnqeQhBr\n0cO32EDSuhKxA6OvPVfrYYJHkJQHhghZiTVmR76pMdEKNnNtNRhVL+kva4kU8nEx\nZX2hZiwcLJIlaKMwXpL6N7BnmTYc/hgSba4I7xFwd0uNJ5GBz4LYsegQ5keKHyzj\n772GPYZuf1YsUdB5B62xMOSFRi+2HIu/Qe0cfthLL3bM6c0SgJg3iIoxkmeloq9X\nrF6GDB5tAgMBAAECggEAFvxO/fAD6eIamphFkgX57mt3uVday5ofj7RMvsx5ttC1\nrnx2WcXfuNAUkPwCx53GL9FlX+y8QO7wfWqVeZJyob8E1zPJ/7kanPC0DTEKNbCx\nAMHKAw548z3e5JrnFy/iNmHCr8JLhzirmqSft1ubEtW0Ls7XW3AyjEv/K4hjZfl2\nb6xFdyGNV7B3Dr5Fkwsa3nBd3qbmdjEIMIXcIfPIKbXKAd8/KPqv42P1eO2UhjKm\nyZWD4tHPeNhvsEkESEBFRbOAaTQ/Li8SLjsDKqr/JZ5VtE17tk6b2ZdDoMNczG/Y\nOAuauMpI0oqwN8/EONkdhVnPBJUtrS01UO5ZChc+cQKBgQDP582zkJmquTCSHjXd\n93JJGs19u+yqky3V8y9HMZYdpI79fHYWvhtj4QhCjrc2P8QzPkw2A621cwonIWSt\n7yUUM/fUWP78HDU4UMlzKPrjSYzgKYK4NHm/sNFkBdMlKpzZWNz4ETQV9hE6Bq5t\nPbnPujAAajBsejF+ilKRefrAswKBgQDKlh3IMsH41nR5qNyQDhEnwvYmleuoWKAU\ni4wWO3lvDfwXvriWSCjEApkX0WqDupQ7f1kfqH4/ZY0dBPYYb/rp8m75TfktnLYp\n4r7pduw/JJH2cMUHYsxGkpJazqjnbtmY51mVhbpUXxXiVp3nXPWT2zKdSKnUoZNX\n/3bS9lz0XwKBgE4ieeZAM+A7lQt1Gx1+f48F6bCVTc6VXaaIrH3/HsGpNKwDeIX3\nkGerDOWmqShUMrJneVDbdQ86Wth17laIB9Fd7of5omqxVzcA9ZS4FAIThERClYQR\nBKiMFUWYAtB3AVeV1AXOwVp3jeXW2PrpNcnh2WRuhCBgk/VQmtNdmmWNAoGAUw6K\ntUqCFjguVraxfuoVhHy9GIK8tC9pqiKwU2kc1zgfk8iguxRoijwachZsmgdDwMTs\nUDtvTySeXzhqgQhgEcxQTSv3rgii8rdA2EzmfNjMcwI29Vk/MOvkzxANVZ0v3y1y\noAfMpcy6Fyq14GZPVMg4jx18a223EAvvtnxFDfcCgYEAutKwcAhswa8FCQ2nbXod\n7kGFESX9N0EhMFPVelcQAhGrV3c6RdEQLk1KU1NWn3fV34lFW9cs1QQYrEm3j1Ij\ntx3PqY63c2VU0I5J9M0Lry94fgRjdU6r9/bKSA2IlFP3WhqhQr1Qj9mULtoaEM8S\nL0jTZ3iEn3lVvHmTZVq9Ars=\n-----END PRIVATE KEY-----\n",
+  "client_email": "sports-sheet@mineral-aegis-312803.iam.gserviceaccount.com",
+  "client_id": "118080028541145968785",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sports-sheet%40mineral-aegis-312803.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

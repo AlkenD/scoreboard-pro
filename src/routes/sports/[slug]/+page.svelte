@@ -1,82 +1,85 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
+	import sheetsToJson from '@dhanush-npm/google-sheets-to-json';
 	import medalImage from '../../../assets/medal.png';
 
-	let rounds = [
-		{
-			roundNumber: 1,
-			status: 'ended',
-			endTime: '12:30PM',
-			matches: [
-				{
-					matchNumber: 1,
-					teamA: 'St. Francis College',
-					teamB: 'ABC College',
-					status: 'ended',
-					teamAScore: 20,
-					teamBScore: 19
-				},
-				{
-					matchNumber: 2,
-					teamA: 'Christ College',
-					teamB: 'BNU College',
-					status: 'ended',
-					teamAScore: 14,
-					teamBScore: 17
-				},
-				{
-					matchNumber: 3,
-					teamA: 'JNC College',
-					teamB: 'BNU College',
-					status: 'ended',
-					teamAScore: 9,
-					teamBScore: 18
-				},
-				{
-					matchNumber: 4,
-					teamA: 'NYC College',
-					teamB: 'BNU College',
-					status: 'ended',
-					teamAScore: 19,
-					teamBScore: 12
-				}
-			]
-		},
-		{
-			roundNumber: 2,
-			status: 'ongoing',
-			matches: [
-				{
-					matchNumber: 1,
-					teamA: 'St. Francis College',
-					teamB: 'ABC College',
-					status: 'ended',
-					teamAScore: 20,
-					teamBScore: 19
-				},
-				{
-					matchNumber: 2,
-					teamA: 'Christ College',
-					teamB: 'BNU College',
-					status: 'ended',
-					teamAScore: 14,
-					teamBScore: 17
-				},
-				{
-					matchNumber: 3,
-					teamA: 'JNC College',
-					teamB: 'BNU College',
-					status: 'ongoing'
-				},
-				{
-					matchNumber: 4,
-					teamA: 'NYC College',
-					teamB: 'BNU College',
-					status: 'ongoing'
-				}
-			]
-		}
-	];
+	// let rounds = [
+	// 	{
+	// 		roundNumber: 1,
+	// 		status: 'ended',
+	// 		endTime: '12:30PM',
+	// 		matches: [
+	// 			{
+	// 				matchNumber: 1,
+	// 				teamA: 'St. Francis College',
+	// 				teamB: 'ABC College',
+	// 				status: 'ended',
+	// 				teamAScore: 20,
+	// 				teamBScore: 19
+	// 			},
+	// 			{
+	// 				matchNumber: 2,
+	// 				teamA: 'Christ College',
+	// 				teamB: 'BNU College',
+	// 				status: 'ended',
+	// 				teamAScore: 14,
+	// 				teamBScore: 17
+	// 			},
+	// 			{
+	// 				matchNumber: 3,
+	// 				teamA: 'JNC College',
+	// 				teamB: 'BNU College',
+	// 				status: 'ended',
+	// 				teamAScore: 9,
+	// 				teamBScore: 18
+	// 			},
+	// 			{
+	// 				matchNumber: 4,
+	// 				teamA: 'NYC College',
+	// 				teamB: 'BNU College',
+	// 				status: 'ended',
+	// 				teamAScore: 19,
+	// 				teamBScore: 12
+	// 			}
+	// 		]
+	// 	},
+	// 	{
+	// 		roundNumber: 2,
+	// 		status: 'ongoing',
+	// 		matches: [
+	// 			{
+	// 				matchNumber: 1,
+	// 				teamA: 'St. Francis College',
+	// 				teamB: 'ABC College',
+	// 				status: 'ended',
+	// 				teamAScore: 20,
+	// 				teamBScore: 19
+	// 			},
+	// 			{
+	// 				matchNumber: 2,
+	// 				teamA: 'Christ College',
+	// 				teamB: 'BNU College',
+	// 				status: 'ended',
+	// 				teamAScore: 14,
+	// 				teamBScore: 17
+	// 			},
+	// 			{
+	// 				matchNumber: 3,
+	// 				teamA: 'JNC College',
+	// 				teamB: 'BNU College',
+	// 				status: 'ongoing'
+	// 			},
+	// 			{
+	// 				matchNumber: 4,
+	// 				teamA: 'NYC College',
+	// 				teamB: 'BNU College',
+	// 				status: 'ongoing'
+	// 			}
+	// 		]
+	// 	}
+	// ];
 
 	function reverseSlug(slug: string) {
 		return slug
@@ -84,6 +87,14 @@
 			.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
 			.join(' ');
 	}
+
+	$: loaded = false;
+
+	onMount(() => {
+		if (browser) {
+			loaded = true;
+		}
+	});
 </script>
 
 <main class="p-4 space-y-4">
@@ -91,6 +102,36 @@
 		<h1 class="text-4xl">{reverseSlug($page.params.slug)}</h1>
 	</section>
 	<section>
+		<table class="w-full text-sm text-left text-gray-500 rounded-md overflow-hidden">
+			<thead class="text-gray-700 uppercase bg-gray-50">
+				<tr>
+					<th scope="col" class="px-6 py-3 text-orange-400"> Name </th>
+					<th scope="col" class="px-6 py-3 text-blue-400"> Class </th>
+					<th scope="col" class="px-6 py-3 text-green-400"> Points </th>
+				</tr>
+			</thead>
+			{#if loaded}
+				<tbody>
+					{#await sheetsToJson('AIzaSyC5XzS785yPWZ79swN0mpPW3XVy7Duf5SY', '1sm_rPFo7xDSPuWHn4MG8xMVe8DKZL1KlgSYFhqvDDDk', reverseSlug($page.params.slug).toUpperCase())}
+						<p>...waiting</p>
+					{:then items}
+						{#each items as item}
+							<tr class="bg-white border-b">
+								<th scope="row" class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap">
+									{item.name}
+								</th>
+								<td class="px-6 py-4 text-gray-900"> {item.class} </td>
+								<td class="px-6 py-4 text-gray-900 text-center"> {item.points} </td>
+							</tr>
+						{/each}
+					{:catch error}
+						<p style="color: red">{error.message}</p>
+					{/await}
+				</tbody>
+			{/if}
+		</table>
+	</section>
+	<!-- <section>
 		{#each rounds as round}
 			{#if round.status === 'ongoing'}
 				<div class="bg-white p-2 rounded-2xl divide-y divide-black/10 text-black">
@@ -167,7 +208,7 @@
 				</div>
 			{/if}
 		{/each}
-	</section>
+	</section> -->
 	<!-- <section>
 		<h2 class="text-2xl">Upcoming</h2>
 	</section>
