@@ -36,7 +36,7 @@
 		<h2 class="text-4xl text-center">3rd Annual Athelitic Meet</h2>
 	</section>
 	<section class="space-y-2">
-		<h2 class="text-lg text-center font-bold text-yellow-400">Top 5 Class Rankings</h2>
+		<h2 class="text-lg text-center font-bold text-yellow-400">Top 10 Class Rankings</h2>
 		<table class="w-full text-sm text-left rtl:text-right text-gray-500 rounded-md overflow-hidden">
 			<thead class="text-orange-500 uppercase bg-gray-50">
 				<tr>
@@ -76,7 +76,7 @@
 			<thead class="text-orange-500 uppercase bg-gray-50">
 				<tr>
 					<th scope="col" class="pl-6 py-3"> Sport </th>
-					<th scope="col" class="pr-6 py-3 text-center"> Scores </th>
+					<th scope="col" class="pr-6 py-3 text-center"> Results </th>
 				</tr>
 			</thead>
 			<tbody>
